@@ -1,4 +1,4 @@
-name: Validar y publicar sitio de Fernanda Morales
+name: Publicar web de Fernanda Morales
 
 on:
   push:
@@ -6,74 +6,77 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
-  group: publicar-alangasi
+  group: github-pages
   cancel-in-progress: true
 
 jobs:
-  publicar:
-    name: Verificar sitio y publicar rama gh-pages
+  build:
+    name: Validar y preparar sitio
     runs-on: ubuntu-latest
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          persist-credentials: true
 
-      - name: Verificar archivos necesarios
-        shell: bash
+      - name: Verificar archivos y enlaces internos
         run: |
-          set -euo pipefail
           python3 - <<'PY'
           from pathlib import Path
+          import re
+
+          root = Path(".")
           required = [
-              "index.html", "styles.css", "app.js", "creditos.html", "privacidad.html",
-              "assets/favicon.svg", "assets/fernanda-portrait.webp",
-              "assets/alangasi-horizonte.webp", "assets/alangasi-panorama.webp",
-              "assets/vias-alangasi.webp", "assets/comunidad-el-tingo.webp",
-              "assets/cultura-el-tingo.webp", "assets/fiesta-el-tingo.webp",
-              "assets/tradicion-el-tingo.webp"
+              "index.html", "styles.css", "app.js",
+              "creditos.html", "privacidad.html",
+              "assets/favicon.svg",
+              "assets/fernanda-portrait.webp",
+              "assets/alangasi-horizonte.webp",
+              "assets/alangasi-panorama.webp",
+              "assets/vias-alangasi.webp",
+              "assets/comunidad-el-tingo.webp",
+              "assets/cultura-el-tingo.webp",
+              "assets/fiesta-el-tingo.webp",
+              "assets/tradicion-el-tingo.webp",
           ]
-          missing = [name for name in required if not Path(name).is_file() or Path(name).stat().st_size == 0]
+          missing = [name for name in required if not (root / name).is_file() or (root / name).stat().st_size == 0]
           if missing:
-              raise SystemExit("Faltan recursos del sitio: " + ", ".join(missing))
-          print("Sitio validado: HTML, estilos, scripts y fotografías presentes.")
+              raise SystemExit("Faltan archivos de la web: " + ", ".join(missing))
+
+          sources = [root / "index.html", root / "styles.css", root / "creditos.html", root / "privacidad.html"]
+          referenced_assets = set()
+          for source in sources:
+              text = source.read_text(encoding="utf-8")
+              referenced_assets.update(re.findall(r"assets/[a-zA-Z0-9_./-]+(?:webp|svg|png|jpg|jpeg)", text))
+          missing_references = [name for name in sorted(referenced_assets) if not (root / name).is_file()]
+          if missing_references:
+              raise SystemExit("Imágenes no encontradas: " + ", ".join(missing_references))
+          print(f"Validación OK: {len(required)} archivos, {len(referenced_assets)} referencias locales.")
           PY
 
-      - name: Preparar directorio de publicación
-        shell: bash
+      - name: Preparar carpeta pública
         run: |
-          set -euo pipefail
-          publish_dir="$RUNNER_TEMP/alangasi-site"
-          mkdir -p "$publish_dir/assets"
-          cp index.html styles.css app.js creditos.html privacidad.html "$publish_dir/"
-          cp -R assets/. "$publish_dir/assets/"
-          touch "$publish_dir/.nojekyll"
+          mkdir -p _site/assets
+          cp index.html styles.css app.js creditos.html privacidad.html _site/
+          cp -R assets/. _site/assets/
+          touch _site/.nojekyll
 
-      - name: Publicar en gh-pages
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
-            git fetch origin gh-pages
-            git checkout -B gh-pages FETCH_HEAD
-          else
-            git checkout --orphan gh-pages
-          fi
+      - name: Subir archivos para GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
 
-          git rm -rf --ignore-unmatch .
-          git clean -fdx
-          cp -R "$RUNNER_TEMP/alangasi-site/." .
-          git add -A
-          if git diff --cached --quiet; then
-            echo "No hay cambios nuevos para publicar."
-          else
-            git commit -m "deploy: actualizar sitio estático de Alangasí [skip ci]"
-            git push origin HEAD:gh-pages
-            echo "Contenido actualizado en rama gh-pages."
-          fi
+  deploy:
+    name: Publicar en GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Desplegar página pública
+        id: deployment
+        uses: actions/deploy-pages@v4
