@@ -103,3 +103,159 @@ a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button{c
   .hero-title { font-size:clamp(42px,11vw,61px); margin-top:16px; }
   .hero-title span:nth-child(2) { margin-left:6px; }
 }
+
+
+/* Foto renovada en "Conoce a Fernanda": panorama ilustrativo de mayor resolución. */
+.about-visual{min-height:455px;display:flex;align-items:center}
+.brush-circle{
+  width:100%;height:435px;max-width:535px;
+  border-radius:45% 55% 47% 53% / 49% 46% 54% 51%;
+  box-shadow:0 22px 50px rgba(4,49,99,.13);
+  isolation:isolate;background:#eaf4fc;
+}
+.brush-circle:before{background:linear-gradient(0deg,rgba(4,46,96,.28),transparent 40%);opacity:1;z-index:1;pointer-events:none}
+.brush-circle img{
+  position:absolute;inset:0;bottom:auto;left:auto;
+  width:100%;height:100%;max-width:none;
+  transform:none;object-fit:cover;object-position:69% center;filter:none;
+}
+.about-photo-caption{
+  position:absolute;left:9%;bottom:54px;z-index:2;
+  font:700 18px/1.2 "Kalam",cursive;letter-spacing:.3px;color:#fff;
+  text-shadow:0 2px 12px rgba(3,28,62,.65);
+  pointer-events:none
+}
+.about-sticker{right:-4%;bottom:18px;font-size:20px;line-height:1.18}
+.about-visual:before{top:4px;left:-20px}
+.about-visual:after{bottom:8px;right:-5px}
+
+/* Eje adicional: desarrollo económico, presente en el plan de trabajo. */
+.proposal-economy{
+  display:flex;align-items:center;gap:17px;
+  padding:20px 24px;margin-top:25px;
+  background:#fff;border:1px solid #dae9f7;border-radius:18px;
+  box-shadow:0 10px 25px rgba(4,54,116,.06)
+}
+.proposal-economy-icon{
+  width:48px;height:48px;display:grid;place-items:center;
+  flex:0 0 auto;border-radius:50%;background:#eef7ff;color:#0874d3
+}
+.proposal-economy-icon svg{width:24px;height:24px}
+.proposal-economy>div{flex:1;min-width:0}
+.proposal-economy strong{font-size:15px;color:#063f88}
+.proposal-economy p{color:#4f6583;font-size:12px;margin:5px 0 0}
+.proposal-economy .btn{white-space:nowrap}
+
+/* Diálogo documental: jerarquía clara, medidas, cronograma y transparencia. */
+.proposal-dialog{
+  width:min(100% - 28px,980px);max-width:980px;
+  max-height:min(92dvh,990px);
+  padding:0;border-radius:24px;overflow-y:auto;overscroll-behavior:contain;
+  color:#123663;background:#fff;
+}
+.proposal-modal-header{
+  position:relative;padding:34px 44px 30px;overflow:hidden;
+  background:linear-gradient(112deg,#f0f8ff,#fff 72%);
+  border-bottom:1px solid #e4edf6;
+}
+.proposal-modal-header:after{
+  content:"";position:absolute;right:-60px;top:-100px;width:260px;height:260px;
+  border:28px solid rgba(251,139,24,.10);border-radius:50%;pointer-events:none
+}
+.proposal-kicker,.proposal-eyebrow{
+  display:inline-flex;align-items:center;gap:9px;color:#0067bc;
+  font-weight:800;font-size:11px;letter-spacing:1.1px
+}
+.proposal-category{
+  margin:21px 0 3px!important;font-size:12px!important;
+  letter-spacing:.3px;color:#627895!important;font-weight:700
+}
+.proposal-dialog .section-script{
+  margin:7px 0 12px;font-size:clamp(30px,3.3vw,46px);
+  line-height:1.1;color:#063f88
+}
+.proposal-summary{
+  max-width:720px;font-size:16px!important;line-height:1.6;
+  color:#3a5477!important;margin:0!important
+}
+.proposal-dialog .dialog-close{z-index:5;top:20px;right:23px}
+.proposal-modal-content{padding:30px 44px 32px}
+.proposal-dialog h3{
+  font-size:20px;line-height:1.2;margin:9px 0 17px;font-weight:800;color:#063f88
+}
+.proposal-objective{
+  background:#f1f8ff;border-left:4px solid #ff8d21;
+  padding:23px 26px;border-radius:0 15px 15px 0;margin-bottom:29px
+}
+.proposal-objective h3{margin-bottom:9px}
+.proposal-objective p{margin:0;color:#435d7c;font-size:14px;line-height:1.65}
+.proposal-modal-grid{display:grid;grid-template-columns:minmax(0,1.26fr) minmax(0,.92fr);gap:23px}
+.proposal-action-panel,.proposal-time-panel,.proposal-method-panel{
+  border:1px solid #e3edf8;border-radius:16px;padding:23px;
+  background:#fff
+}
+.proposal-right-col{display:flex;flex-direction:column;gap:18px}
+.proposal-action-list,.proposal-time-list{list-style:none;margin:0;padding:0}
+.proposal-action-list li{
+  display:flex;gap:13px;align-items:flex-start;padding:12px 0;
+  border-bottom:1px solid #edf2f8;font-size:13px;line-height:1.55;color:#3e5472
+}
+.proposal-action-list li:last-child,.proposal-time-list li:last-child{border-bottom:0}
+.proposal-action-number{
+  flex:0 0 auto;width:29px;height:29px;display:grid;place-items:center;
+  background:#e4f3ff;color:#0064af;border-radius:9px;font-size:11px;font-weight:800
+}
+.proposal-time-panel{background:#f9fbff}
+.proposal-time-list li{padding:12px 0;border-bottom:1px solid #e4ecf7}
+.proposal-time-list strong{
+  display:inline-block;border-radius:99px;padding:4px 10px;
+  background:#fff0da;color:#ae5a00;font-size:11px
+}
+.proposal-time-list p,.proposal-method-panel p{
+  font-size:12px;line-height:1.55;color:#4d6583;margin:8px 0 0
+}
+.proposal-method-panel{background:#fdfcff}
+.proposal-transparency{padding:23px 26px;background:#073d81;color:#fff;border-radius:16px;margin-top:24px}
+.proposal-transparency .proposal-eyebrow{color:#ffcc81}
+.proposal-transparency h3{color:#fff;margin:10px 0}
+.proposal-transparency p{font-size:13px;line-height:1.6;color:#dceafe;margin:0}
+.proposal-disclaimer{
+  background:#f8fafc;border:1px solid #e8eef5;border-radius:13px;
+  padding:17px 20px;margin-top:18px;color:#536987
+}
+.proposal-disclaimer strong{font-size:12px;color:#244a77}
+.proposal-disclaimer p{font-size:11px;line-height:1.55;margin:5px 0}
+.proposal-modal-footer{
+  position:sticky;bottom:0;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:17px 44px;background:#fff;border-top:1px solid #e2eaf3;
+  box-shadow:0 -8px 25px rgba(4,39,86,.045)
+}
+.proposal-modal-footer>span{font-size:11px;color:#68809d;font-weight:600}
+.proposal-modal-footer .btn{white-space:nowrap}
+@media(max-width:830px){
+  .about-visual{min-height:360px}.brush-circle{height:340px}
+  .about-photo-caption{bottom:50px;font-size:15px}
+  .about-sticker{font-size:15px}
+  .proposal-modal-grid{grid-template-columns:1fr}
+  .proposal-modal-header,.proposal-modal-content{padding-left:27px;padding-right:27px}
+  .proposal-modal-footer{padding-left:27px;padding-right:27px}
+}
+@media(max-width:600px){
+  .about-visual{min-height:340px;max-width:390px}
+  .brush-circle{height:325px;width:94%;margin:auto}
+  .brush-circle img{object-position:67% center}
+  .about-photo-caption{left:11%;bottom:49px}
+  .about-sticker{right:0;bottom:12px}
+  .proposal-economy{flex-wrap:wrap;padding:17px;gap:11px}
+  .proposal-economy>div{flex:1 1 calc(100% - 64px)}
+  .proposal-economy .btn{width:100%;justify-content:center}
+  .proposal-dialog{width:calc(100% - 14px);max-height:96dvh;border-radius:18px}
+  .proposal-modal-header{padding:26px 19px}
+  .proposal-modal-content{padding:19px}
+  .proposal-modal-footer{padding:14px 19px}
+  .proposal-modal-footer>span{display:none}
+  .proposal-modal-footer .btn{width:100%;justify-content:center}
+  .proposal-objective,.proposal-action-panel,.proposal-time-panel,.proposal-method-panel{padding:17px}
+  .proposal-dialog h3{font-size:18px}
+  .proposal-summary{font-size:14px!important}
+}
