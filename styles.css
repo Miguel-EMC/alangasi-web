@@ -259,3 +259,67 @@ a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button{c
   .proposal-dialog h3{font-size:18px}
   .proposal-summary{font-size:14px!important}
 }
+
+
+/* Sección deportiva dentro de "Conoce a Fernanda" */
+.about-sports{
+  margin-top:54px;
+  padding-top:56px;
+  border-top:1px solid #dfebf5;
+  scroll-margin-top:110px
+}
+.about-sports-intro{border-left:3px solid var(--orange);padding:2px 0 2px 16px;font-size:15px}
+.sports-heading{
+  display:flex;align-items:center;justify-content:space-between;gap:34px;
+  margin-bottom:28px
+}
+.sports-heading-text{max-width:780px}
+.sports-heading .section-script{font-size:clamp(31px,3.3vw,47px);margin:13px 0 9px}
+.sports-heading p{margin:0;color:#415c7c;font-size:15px;line-height:1.7}
+.sports-emblem{
+  display:flex;gap:11px;align-items:center;justify-content:center;
+  min-width:142px;min-height:90px;
+  border-radius:70px;background:#eaf6ff;border:1px solid #dcebf8
+}
+.sports-emblem span{font-size:30px;line-height:1}
+.sports-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.sports-card{min-width:0;margin:0;background:#fff;border:1px solid #e2ecf6;
+  border-radius:20px;overflow:hidden;
+  box-shadow:0 12px 36px rgba(5,54,104,.075)}
+.sports-card-photo{
+  width:100%;aspect-ratio:1.57;background:#edf4fa;overflow:hidden;
+  display:flex;align-items:center;justify-content:center
+}
+.sports-card-photo img{width:100%;height:100%;object-fit:contain;object-position:center}
+.sports-card-body{padding:23px 26px 26px}
+.sports-card-kicker{color:#0070bc;font-size:11px;font-weight:800;letter-spacing:1.4px}
+.sports-card-body h4{
+  font-family:"Kalam",cursive;color:#063f88;
+  font-size:28px;line-height:1.2;margin:8px 0 10px
+}
+.sports-card-body p{color:#425b7a;font-size:13px;line-height:1.6;margin:0 0 12px}
+.sports-card-body small{
+  display:block;font-size:11px;color:#6a7d97;
+  border-top:1px solid #e9eff6;padding-top:11px;line-height:1.5
+}
+.sports-archive-note{
+  color:#607594;font-size:11px;line-height:1.6;margin:19px 0 0;
+  max-width:920px
+}
+@media(max-width:830px){
+  .about-sports{margin-top:43px;padding-top:42px}
+  .sports-heading{gap:18px}
+  .sports-emblem{min-width:102px;min-height:70px}
+  .sports-emblem span{font-size:23px}
+  .sports-card-body{padding:20px}
+}
+@media(max-width:600px){
+  .about-sports{margin-top:36px;padding-top:35px}
+  .about-sports-intro{font-size:13px}
+  .sports-heading{display:block}
+  .sports-heading p{font-size:13px}
+  .sports-emblem{display:none}
+  .sports-grid{grid-template-columns:1fr;gap:16px}
+  .sports-card-photo{aspect-ratio:1.45}
+  .sports-card-body h4{font-size:26px}
+}
