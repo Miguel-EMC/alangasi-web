@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/hero-campaign-bg.webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
@@ -60,15 +61,15 @@
       <div class="container hero-content">
         <div class="hero-copy">
           <div class="eyebrow hero-eyebrow"><span class="eyebrow-dot"></span> UNA VOZ DESDE ALANGASÍ</div>
-          <h1 id="hero-title" class="hero-title"><span>Juntos por un</span><span>mejor <em>Alangasí</em></span></h1>
+          <h1 id="hero-title" class="hero-title"><span>ALANGASÍ</span><span><em>IMPARABLE</em></span></h1>
           <div class="paint-label">FERNANDA MORALES</div>
           <p class="candidate-role">Candidata a la Junta Parroquial de Alangasí</p>
           <p class="hero-description">Una joven del mismo territorio, comprometida con el desarrollo de nuestra parroquia.</p>
           <div class="hero-buttons"><a class="btn btn-orange" href="#propuestas">Conoce mis propuestas <svg><use href="#i-arrow"/></svg></a><a class="btn btn-outline" href="#fernanda">Conóceme <svg><use href="#i-arrow"/></svg></a></div>
           <div class="hero-location"><svg><use href="#i-location"/></svg> Alangasí · Quito · Pichincha</div>
         </div>
-        <div class="hero-portrait-wrap" aria-hidden="true"><span class="hero-sun"></span><img class="hero-portrait" src="assets/fernanda-portrait.webp" alt="" fetchpriority="high"></div>
-        <div class="hero-quote"><span>“Las grandes cosas también se construyen desde la parroquia”</span><i></i></div>
+        <!-- La portada usa una imagen compuesta en alta resolución; no superponer el recorte comprimido. -->
+        <div class="hero-quote"><span>Juntos por un mejor Alangasí</span><i></i></div>
       </div>
       <div class="hero-wave" aria-hidden="true"><svg viewBox="0 0 1440 84" preserveAspectRatio="none"><path fill="#ffb400" d="M0 0C360 130 940-45 1440 14V84H0Z"/><path fill="#063f88" d="M0 14C380 130 940-25 1440 30V84H0Z"/></svg></div>
     </section>
