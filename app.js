@@ -1,21 +1,141 @@
 'use strict';
 
 const topics = {
-  vias: {
-    title: 'Vías y conectividad',
-    description: 'Este eje aborda los temas de movilidad, conectividad y accesibilidad en la parroquia. Las medidas concretas, su viabilidad y sus responsables deberán detallarse en el plan de trabajo oficial.'
+  "vias": {
+    "title": "Vías y conectividad",
+    "category": "Infraestructura, movilidad y servicios básicos",
+    "description": "Accesos seguros entre barrios, mejora de calles y caminos vecinales, movilidad y atención a la falta de agua en sectores vulnerables.",
+    "objective": "Identificar las necesidades de vialidad y servicios básicos para coordinar intervenciones técnicamente priorizadas con las entidades competentes.",
+    "actions": [
+      "Elaborar un inventario de vías, caminos vecinales y zonas con dificultades de acceso o transporte.",
+      "Gestionar ante el Municipio de Quito el bacheo, adoquinado y mantenimiento de vías secundarias y caminos vecinales.",
+      "Impulsar señalización horizontal y vertical, reductores de velocidad y medidas de seguridad en zonas escolares.",
+      "Coordinar mesas con operadoras para mejorar frecuencias y gestionar rutas de transporte que respondan al crecimiento poblacional.",
+      "Promover alumbrado LED en calles, parques, paradas y accesos a los barrios.",
+      "Fiscalizar el plan de mejoras de EPMAPS y gestionar abastecimiento emergente de agua y sistemas comunitarios de almacenamiento para sectores vulnerables."
+    ],
+    "milestones": [
+      {
+        "when": "Año 1",
+        "text": "Diagnóstico vial y plan emergente de bacheo y mantenimiento preventivo; identificación de zonas sin cobertura de transporte."
+      },
+      {
+        "when": "Año 4",
+        "text": "Consolidación del circuito vial interno y optimización de rutas alimentadoras; auditoría vial final."
+      }
+    ],
+    "method": "Gestión y fiscalización con EPMAPS, la Secretaría de Movilidad, el Municipio de Quito y operadores de transporte. Varias obras dependen de coordinación y presupuesto interinstitucional.",
+    "source": "Plan de Trabajo Alangasí 2027–2031 · páginas 2, 4, 5 y 6 del PDF."
   },
-  educacion: {
-    title: 'Educación y juventud',
-    description: 'Este eje plantea conversar sobre las oportunidades educativas, culturales y de participación que interesan a la niñez y juventud de Alangasí, dentro del ámbito de competencias de la Junta Parroquial.'
+  "educacion": {
+    "title": "Educación y juventud",
+    "category": "Formación, participación y oportunidades",
+    "description": "Nivelación académica, preparación para el ingreso a la universidad, programas recreativos y espacios de liderazgo juvenil.",
+    "objective": "Promover oportunidades de aprendizaje, desarrollo integral y participación activa de niñas, niños y jóvenes de Alangasí.",
+    "actions": [
+      "Gestionar talleres gratuitos de nivelación académica y preparación para el ingreso a la educación superior mediante convenios con universidades públicas.",
+      "Crear la Brigada Juvenil de Alangasí para apoyar mingas, actividades comunitarias y proyectos de liderazgo.",
+      "Impulsar programas culturales, deportivos y recreativos permanentes.",
+      "Incorporar refuerzo escolar al centro parroquial de cuidados previsto en el plan.",
+      "Desarrollar procesos de educación ambiental y sensibilización sobre reciclaje, cuidado del agua y quebradas.",
+      "Gestionar alianzas con universidades para talleres de transferencia tecnológica y marketing digital."
+    ],
+    "milestones": [
+      {
+        "when": "Año 2",
+        "text": "Se proyecta la apertura del primer Centro Parroquial de Cuidados, Salud Comunitaria y Refuerzo Escolar."
+      },
+      {
+        "when": "Año 3",
+        "text": "El cronograma prevé alianzas con universidades para talleres de transferencia tecnológica y marketing digital."
+      }
+    ],
+    "method": "Convenios con universidades públicas, colaboración con instituciones educativas y participación de organizaciones comunitarias.",
+    "source": "Plan de Trabajo Alangasí 2027–2031 · páginas 3, 5 y 6 del PDF."
   },
-  bienestar: {
-    title: 'Bienestar social e inclusión',
-    description: 'Este eje reúne inquietudes relacionadas con el tejido comunitario, la inclusión, los espacios de encuentro y la atención a las distintas necesidades de la parroquia.'
+  "bienestar": {
+    "title": "Bienestar social e inclusión",
+    "category": "Salud, convivencia, espacios públicos y seguridad",
+    "description": "Servicios comunitarios, salud preventiva, espacios seguros y accesibles y atención a grupos de cuidado prioritario.",
+    "objective": "Fortalecer la infraestructura social y la atención comunitaria para promover inclusión, deporte, cultura y prevención de la violencia.",
+    "actions": [
+      "Gestionar brigadas médicas gratuitas y campañas de salud preventiva.",
+      "Adecuar y mejorar casas barriales, centros comunales, parques y canchas de uso comunitario.",
+      "Fortalecer programas para niñez, jóvenes, mujeres, personas mayores y personas con discapacidad.",
+      "Promover actividades deportivas, culturales y recreativas permanentes.",
+      "Desplegar brigadas comunitarias itinerantes de prevención de adicciones, salud mental y atención al adulto mayor.",
+      "Gestionar iluminación estratégica y coordinar redes de alerta barrial y botones de pánico con la Policía Nacional.",
+      "Organizar campañas de prevención de estafas, robos y violencia."
+    ],
+    "milestones": [
+      {
+        "when": "Año 2",
+        "text": "Apertura prevista del primer Centro Parroquial de Cuidados, Salud Comunitaria y Refuerzo Escolar."
+      },
+      {
+        "when": "Año 3",
+        "text": "Intervención, iluminación técnica y equipamiento de ligas barriales y parques de la parroquia."
+      }
+    ],
+    "method": "Uso y adecuación de infraestructura pública; articulación con servicios de salud, Policía Nacional, organizaciones barriales y autoridades competentes.",
+    "source": "Plan de Trabajo Alangasí 2027–2031 · páginas 3, 4, 5 y 6 del PDF."
   },
-  entorno: {
-    title: 'Un entorno más sostenible',
-    description: 'Este eje se orienta al cuidado de espacios públicos, al respeto por el entorno natural y al fortalecimiento de hábitos comunitarios responsables.'
+  "entorno": {
+    "title": "Un entorno más sostenible",
+    "category": "Biodiversidad, agua y gestión de residuos",
+    "description": "Recuperación de quebradas, reforestación con especies nativas y participación ciudadana en limpieza y manejo de residuos.",
+    "objective": "Proteger fuentes hídricas y espacios ecológicos, recuperar zonas deterioradas y promover hábitos comunitarios de cuidado ambiental.",
+    "actions": [
+      "Desarrollar programas permanentes de reforestación con especies nativas.",
+      "Recuperar y proteger quebradas, microcuencas y espacios ecológicos de la parroquia.",
+      "Organizar jornadas de limpieza y mingas ambientales.",
+      "Impulsar campañas de reciclaje, separación de residuos y educación ambiental.",
+      "Gestionar proyectos de conservación de fuentes de agua y reducción de contaminación.",
+      "Promover composteras comunitarias con capacitación en economía circular y reciclaje en la fuente."
+    ],
+    "milestones": [
+      {
+        "when": "Año 1",
+        "text": "Intervención, delimitación comunitaria y restauración del primer tramo crítico de microcuencas o quebradas."
+      },
+      {
+        "when": "Año 2",
+        "text": "Meta del plan: que una quinta parte de los comercios y viviendas separe activamente residuos orgánicos."
+      },
+      {
+        "when": "Año 3",
+        "text": "Proyectos de reforestación y diseño de rutas para turismo rural ecológico autosostenible."
+      }
+    ],
+    "method": "Mingas y participación de barrios, instituciones educativas y actores ambientales para conservación y gestión técnica.",
+    "source": "Plan de Trabajo Alangasí 2027–2031 · páginas 2, 3, 5 y 6 del PDF."
+  },
+  "economia": {
+    "title": "Economía, emprendimiento y turismo",
+    "category": "Fomento productivo y comercial",
+    "description": "Capacitación, ferias de emprendimiento, promoción turística y articulación para apoyar a los productores de Alangasí.",
+    "objective": "Fortalecer agricultura, artesanía, comercio, servicios y turismo mediante acompañamiento técnico y vínculos institucionales.",
+    "actions": [
+      "Gestionar capacitación, asistencia técnica y educación financiera para emprendimientos locales.",
+      "Promover ferias y espacios permanentes de comercialización de productos locales.",
+      "Impulsar el turismo comunitario, religioso, gastronómico y cultural de la parroquia.",
+      "Promover rutas que integren el patrimonio, las tradiciones y los atractivos naturales de Alangasí.",
+      "Gestionar alianzas públicas, privadas y académicas para agricultores, artesanos, comerciantes y emprendedores.",
+      "Vincular a microproductores con redes de innovación productiva y formación en marketing digital.",
+      "Implementar una plataforma digital parroquial para promover e intercambiar productos locales."
+    ],
+    "milestones": [
+      {
+        "when": "Año 3",
+        "text": "Meta del plan: vincular a 50 microproductores, artesanos y agricultores a redes de innovación productiva."
+      },
+      {
+        "when": "Año 4",
+        "text": "Implementar y estabilizar la plataforma digital comercial; evaluar el cumplimiento del plan plurianual."
+      }
+    ],
+    "method": "Alianzas con instituciones públicas, privadas y académicas, capacitación continua y promoción productiva y turística comunitaria.",
+    "source": "Plan de Trabajo Alangasí 2027–2031 · páginas 3, 4 y 6 del PDF."
   }
 };
 
@@ -56,11 +176,44 @@ if ('IntersectionObserver' in window && linkedSections.length) {
 }
 
 const proposalDialog = document.getElementById('proposal-dialog');
+const proposalActions = document.getElementById('modal-topic-actions');
+const proposalTimeline = document.getElementById('modal-topic-timeline');
+
+function renderPlanList(target, entries, timeline = false) {
+  target.replaceChildren();
+  entries.forEach((entry, index) => {
+    const li = document.createElement('li');
+    if (timeline) {
+      const label = document.createElement('strong');
+      label.textContent = entry.when;
+      const description = document.createElement('p');
+      description.textContent = entry.text;
+      li.append(label, description);
+    } else {
+      const number = document.createElement('span');
+      number.className = 'proposal-action-number';
+      number.setAttribute('aria-hidden', 'true');
+      number.textContent = String(index + 1).padStart(2, '0');
+      const description = document.createElement('span');
+      description.textContent = entry;
+      li.append(number, description);
+    }
+    target.appendChild(li);
+  });
+}
+
 document.querySelectorAll('[data-topic]').forEach(button => button.addEventListener('click', () => {
   const topic = topics[button.dataset.topic];
   if (!topic || !proposalDialog) return;
   document.getElementById('modal-topic-title').textContent = topic.title;
+  document.getElementById('modal-topic-category').textContent = topic.category;
   document.getElementById('modal-topic-description').textContent = topic.description;
+  document.getElementById('modal-topic-objective').textContent = topic.objective;
+  document.getElementById('modal-topic-method').textContent = topic.method;
+  document.getElementById('modal-topic-source').textContent = topic.source;
+  renderPlanList(proposalActions, topic.actions);
+  renderPlanList(proposalTimeline, topic.milestones, true);
+  proposalDialog.scrollTop = 0;
   proposalDialog.showModal();
 }));
 
