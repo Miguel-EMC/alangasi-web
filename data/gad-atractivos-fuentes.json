@@ -1,0 +1,107 @@
+{
+  "origen": "GAD Parroquial Rural Alangasí",
+  "pagina": "https://gadalangasi.gob.ec/atractivos/",
+  "derechos": "El sitio muestra 'Todos los derechos reservados'; no se identificó licencia para reutilización en una web de campaña.",
+  "estado": "Inventario de enlaces obtenido para revisión. No se descargaron ni publicaron imágenes del GAD en el sitio.",
+  "nota": "Obtener autorización expresa de uso o fotografías alternativas con licencia adecuada antes de incluir recursos de GAD en la página.",
+  "imagenes": [
+    {
+      "titulo": "Volcán Ilaló y Cruz del Mirador",
+      "tema": "entorno",
+      "imagen_fuente": "https://gadalangasi.gob.ec/wp-content/uploads/2020/06/ilalo-2.png",
+      "pagina_fuente": "https://gadalangasi.gob.ec/atractivos/",
+      "publicable_sin_autorizacion": false
+    },
+    {
+      "titulo": "Iglesia Matriz San Pedro del Tingo",
+      "tema": "patrimonio",
+      "imagen_fuente": "https://gadalangasi.gob.ec/wp-content/uploads/2021/04/matriz-del-tingo.jpg",
+      "pagina_fuente": "https://gadalangasi.gob.ec/atractivos/",
+      "publicable_sin_autorizacion": false
+    },
+    {
+      "titulo": "Balneario El Tingo",
+      "tema": "turismo",
+      "imagen_fuente": "https://gadalangasi.gob.ec/wp-content/uploads/2020/06/balneario.png",
+      "pagina_fuente": "https://gadalangasi.gob.ec/atractivos/",
+      "publicable_sin_autorizacion": false
+    },
+    {
+      "titulo": "Parque Ecológico Angamarca",
+      "tema": "entorno",
+      "imagen_fuente": "https://gadalangasi.gob.ec/wp-content/uploads/2025/09/parque.jpg",
+      "pagina_fuente": "https://gadalangasi.gob.ec/atractivos/",
+      "publicable_sin_autorizacion": false
+    },
+    {
+      "titulo": "Complejo Angamarca",
+      "tema": "turismo",
+      "imagen_fuente": "https://gadalangasi.gob.ec/wp-content/uploads/2020/06/angamarca.png",
+      "pagina_fuente": "https://gadalangasi.gob.ec/atractivos/",
+      "publicable_sin_autorizacion": false
+    },
+    {
+      "titulo": "La Chorrera",
+      "tema": "turismo",
+      "imagen_fuente": "https://gadalangasi.gob.ec/wp-content/uploads/2020/06/balneriao-la-chorrera.png",
+      "pagina_fuente": "https://gadalangasi.gob.ec/atractivos/",
+      "publicable_sin_autorizacion": false
+    },
+    {
+      "titulo": "Fuentes Cristalinas",
+      "tema": "turismo",
+      "imagen_fuente": "https://gadalangasi.gob.ec/wp-content/uploads/2025/09/545927747_1106108618399149_6903180182026637241_n-1.jpg",
+      "pagina_fuente": "https://gadalangasi.gob.ec/atractivos/",
+      "publicable_sin_autorizacion": false
+    },
+    {
+      "titulo": "Ushimana",
+      "tema": "turismo",
+      "imagen_fuente": "https://gadalangasi.gob.ec/wp-content/uploads/2025/09/Ushimana.jpg",
+      "pagina_fuente": "https://gadalangasi.gob.ec/atractivos/",
+      "publicable_sin_autorizacion": false
+    },
+    {
+      "titulo": "Complejo Mirasierra",
+      "tema": "turismo",
+      "imagen_fuente": "https://gadalangasi.gob.ec/wp-content/uploads/2025/09/mirasierra-2.jpg",
+      "pagina_fuente": "https://gadalangasi.gob.ec/atractivos/",
+      "publicable_sin_autorizacion": false
+    },
+    {
+      "titulo": "Parque Central de Alangasí",
+      "tema": "cultura",
+      "imagen_fuente": "https://gadalangasi.gob.ec/wp-content/uploads/2020/06/IMG_4329-scaled.jpg",
+      "pagina_fuente": "https://gadalangasi.gob.ec/atractivos/",
+      "publicable_sin_autorizacion": false
+    },
+    {
+      "titulo": "Iglesia Santo Tomás de Aquino",
+      "tema": "patrimonio",
+      "imagen_fuente": "https://gadalangasi.gob.ec/wp-content/uploads/2020/06/santo-tomas.png",
+      "pagina_fuente": "https://gadalangasi.gob.ec/atractivos/",
+      "publicable_sin_autorizacion": false
+    },
+    {
+      "titulo": "Santuario Schoenstatt",
+      "tema": "patrimonio",
+      "imagen_fuente": "https://gadalangasi.gob.ec/wp-content/uploads/2020/06/Santuario-Schoenstatt.png",
+      "pagina_fuente": "https://gadalangasi.gob.ec/atractivos/",
+      "publicable_sin_autorizacion": false
+    },
+    {
+      "titulo": "Centro Cultural de Alangasí",
+      "tema": "educacion-juventud",
+      "imagen_fuente": "https://gadalangasi.gob.ec/wp-content/uploads/2020/06/centro-culatural-alagansi.png",
+      "pagina_fuente": "https://gadalangasi.gob.ec/atractivos/",
+      "publicable_sin_autorizacion": false
+    },
+    {
+      "titulo": "Mirador y Capilla San José",
+      "tema": "patrimonio",
+      "imagen_fuente": "https://gadalangasi.gob.ec/wp-content/uploads/2021/04/capilla-san-jose.jpg",
+      "pagina_fuente": "https://gadalangasi.gob.ec/atractivos/",
+      "publicable_sin_autorizacion": false
+    }
+  ]
+}
