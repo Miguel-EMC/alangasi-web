@@ -217,6 +217,114 @@ document.querySelectorAll('[data-topic]').forEach(button => button.addEventListe
   proposalDialog.showModal();
 }));
 
+
+/* Atractivos: fotos y detalles siempre se abren dentro de la web mediante <dialog>. */
+const tourismPlaces = {
+  "ilalo": {
+    "name": "Mirador del Ilaló",
+    "category": "Naturaleza",
+    "description": "La Cruz del Mirador del Tingo es presentada por el GAD como un punto desde el que se contemplan el valle y varias montañas y volcanes del entorno de Quito.",
+    "highlights": [
+      "Panorámicas del Valle de Los Chillos",
+      "La Cruz del Mirador",
+      "Entorno natural del volcán Ilaló"
+    ],
+    "image": "assets/turismo-ilalo.webp"
+  },
+  "parque": {
+    "name": "Parque Central de Alangasí",
+    "category": "Cultura",
+    "description": "El GAD señala que el parque fue declarado «Museo Iconográfico» en 2009. Sus esculturas de madera evocan personajes y costumbres como el Sacha Runa, el Diablo Huma y el Pingullero.",
+    "highlights": [
+      "Museo Iconográfico",
+      "Esculturas y personajes tradicionales",
+      "Identidad cultural parroquial"
+    ],
+    "image": "assets/turismo-parque.webp"
+  },
+  "tingo": {
+    "name": "Aguas termales de El Tingo",
+    "category": "Descanso",
+    "description": "El GAD presenta al Balneario Municipal El Tingo como uno de los atractivos de la parroquia, con piscinas termales y un entorno vinculado a puestos de gastronomía tradicional.",
+    "highlights": [
+      "Piscinas termales",
+      "Espacios de esparcimiento",
+      "Comida típica en los alrededores"
+    ],
+    "image": "assets/turismo-tingo.webp"
+  },
+  "iglesia": {
+    "name": "Iglesia Santo Tomás de Aquino",
+    "category": "Patrimonio",
+    "description": "La iglesia forma parte de los atractivos patrimoniales que difunde el GAD. Su ficha recupera la historia eclesiástica de la parroquia, establecida en 1832.",
+    "highlights": [
+      "Arquitectura religiosa",
+      "Historia parroquial",
+      "Patrimonio local"
+    ],
+    "image": "assets/turismo-iglesia.webp"
+  },
+  "centro": {
+    "name": "Centro Cultural de Alangasí",
+    "category": "Aprendizaje",
+    "description": "El GAD describe este espacio como un infocentro orientado a la formación en computación e internet para personas de diferentes edades. La oferta vigente debe confirmarse con la institución.",
+    "highlights": [
+      "Formación digital según el GAD",
+      "Espacio de acceso a conocimientos",
+      "Aprendizaje para distintas edades"
+    ],
+    "image": "assets/turismo-centro.webp"
+  },
+  "schoenstatt": {
+    "name": "Santuario Schoenstatt",
+    "category": "Naturaleza y fe",
+    "description": "Ubicado en un entorno elevado, el santuario aparece en la guía del GAD por sus miradores, áreas verdes, senderos cortos y una pequeña laguna.",
+    "highlights": [
+      "Espacios verdes y senderos",
+      "Miradores naturales",
+      "Paisaje y recogimiento"
+    ],
+    "image": "assets/turismo-schoenstatt.webp"
+  }
+};
+const tourismDialog = document.getElementById('tourism-dialog');
+const tourismImage = document.getElementById('tourism-dialog-image');
+const tourismDialogTitle = document.getElementById('tourism-dialog-title');
+const tourismDialogCategory = document.getElementById('tourism-dialog-category');
+const tourismDialogDescription = document.getElementById('tourism-dialog-description');
+const tourismDialogHighlights = document.getElementById('tourism-dialog-highlights');
+
+document.querySelectorAll('[data-tourism-id]').forEach(button => button.addEventListener('click', () => {
+  const place = tourismPlaces[button.dataset.tourismId];
+  if (!place || !tourismDialog) return;
+  tourismDialogTitle.textContent = place.name;
+  tourismDialogCategory.textContent = place.category;
+  tourismDialogDescription.textContent = place.description;
+  tourismImage.src = place.image;
+  tourismImage.alt = 'Fotografía de ' + place.name + ', facilitada por el GAD parroquial de Alangasí';
+  tourismDialogHighlights.replaceChildren();
+  place.highlights.forEach(highlight => {
+    const li = document.createElement('li');
+    li.textContent = highlight;
+    tourismDialogHighlights.appendChild(li);
+  });
+  tourismDialog.scrollTop = 0;
+  tourismDialog.showModal();
+}));
+
+document.querySelectorAll('[data-tourism-filter]').forEach(button => button.addEventListener('click', () => {
+  const category = button.dataset.tourismFilter;
+  document.querySelectorAll('[data-tourism-filter]').forEach(filter => {
+    const active = filter === button;
+    filter.classList.toggle('is-active', active);
+    filter.setAttribute('aria-pressed', String(active));
+  });
+  document.querySelectorAll('.tourism-card').forEach(card => {
+    card.hidden = category !== 'todos' && card.dataset.tourismCategory !== category;
+  });
+}));
+
+
 const galleryDialog = document.getElementById('gallery-dialog');
 document.querySelectorAll('.gallery-item').forEach(button => button.addEventListener('click', () => {
   const full = document.getElementById('gallery-full');
