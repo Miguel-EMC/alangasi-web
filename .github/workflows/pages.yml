@@ -22,6 +22,12 @@ jobs:
       - name: Descargar repositorio
         uses: actions/checkout@v4
 
+      - name: Instalar herramientas de optimización de imágenes
+        run: python3 -m pip install --disable-pip-version-check Pillow==11.3.0
+
+      - name: Descargar atractivos autorizados del GAD Alangasí
+        run: python3 scripts/prepare_tourism_assets.py
+
       - name: Verificar archivos y enlaces internos
         run: |
           python3 - <<'PY'
