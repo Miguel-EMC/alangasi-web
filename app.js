@@ -325,6 +325,29 @@ document.querySelectorAll('[data-tourism-filter]').forEach(button => button.addE
 }));
 
 
+
+/* Diálogo de mapa de barrios sin abrir pestañas externas. */
+const neighborhoodDialog = document.getElementById('neighborhood-map-dialog');
+const neighborhoodZoom = document.getElementById('neighborhood-zoom');
+const neighborhoodScroll = document.getElementById('neighborhood-modal-scroll');
+document.querySelectorAll('[data-open-neighborhood-map]').forEach(button => button.addEventListener('click', () => {
+  if (!neighborhoodDialog) return;
+  neighborhoodScroll?.classList.remove('is-zoomed');
+  if (neighborhoodZoom) {
+    neighborhoodZoom.setAttribute('aria-pressed', 'false');
+    neighborhoodZoom.innerHTML = 'Ampliar detalles <svg><use href="#i-camera"/></svg>';
+  }
+  neighborhoodDialog.showModal();
+}));
+neighborhoodZoom?.addEventListener('click', () => {
+  if (!neighborhoodScroll) return;
+  const zoomed = neighborhoodScroll.classList.toggle('is-zoomed');
+  neighborhoodZoom.setAttribute('aria-pressed', String(zoomed));
+  neighborhoodZoom.innerHTML = zoomed
+    ? 'Volver al tamaño original <svg><use href="#i-camera"/></svg>'
+    : 'Ampliar detalles <svg><use href="#i-camera"/></svg>';
+});
+
 const galleryDialog = document.getElementById('gallery-dialog');
 document.querySelectorAll('.gallery-item').forEach(button => button.addEventListener('click', () => {
   const full = document.getElementById('gallery-full');

@@ -48,6 +48,7 @@ jobs:
               "assets/cultura-el-tingo.webp",
               "assets/fiesta-el-tingo.webp",
               "assets/tradicion-el-tingo.webp",
+              "assets/mapa-barrios-alangasi.avif",
           ]
           missing = [name for name in required if not (root / name).is_file() or (root / name).stat().st_size == 0]
           if missing:
@@ -57,7 +58,7 @@ jobs:
           referenced_assets = set()
           for source in sources:
               text = source.read_text(encoding="utf-8")
-              referenced_assets.update(re.findall(r"assets/[a-zA-Z0-9_./-]+(?:webp|svg|png|jpg|jpeg)", text))
+              referenced_assets.update(re.findall(r"assets/[a-zA-Z0-9_./-]+(?:webp|avif|svg|png|jpg|jpeg)", text))
           missing_references = [name for name in sorted(referenced_assets) if not (root / name).is_file()]
           if missing_references:
               raise SystemExit("Imágenes no encontradas: " + ", ".join(missing_references))
