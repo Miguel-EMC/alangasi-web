@@ -7,6 +7,7 @@ Las fotografías documentales no representan actividades políticas de la candid
 from io import BytesIO
 from pathlib import Path
 from urllib.parse import quote
+import hashlib
 from urllib.request import Request, urlopen
 from PIL import Image, ImageEnhance
 import time
@@ -25,13 +26,18 @@ FILES = {
 }
 def download(title):
     encoded = quote(title.replace(" ", "_"), safe="()_-")
+    filename = title.replace(" ", "_")
+    digest = hashlib.md5(filename.encode("utf-8")).hexdigest()
+    direct = "https://upload.wikimedia.org/wikipedia/commons/" + digest[0] + "/" + digest[:2] + "/" + quote(filename, safe="()_-")
+    proxy = "https://wsrv.nl/?url=" + quote(direct, safe="")
     urls = [
+        proxy,
+        direct,
         "https://commons.wikimedia.org/wiki/Special:Redirect/file/" + encoded,
-        "https://commons.wikimedia.org/wiki/Special:FilePath/" + encoded,
     ]
     error = None
     for url in urls:
-        for attempt in range(3):
+        for attempt in range(2):
             try:
                 request = Request(url, headers={"User-Agent": "AlangasiWeb/1.0 (source attribution: commons.wikimedia.org; Wikimedia licensed image downloader)", "Accept": "image/avif,image/webp,image/*,*/*"})
                 with urlopen(request, timeout=40) as response:
@@ -39,7 +45,7 @@ def download(title):
                 return Image.open(BytesIO(raw)).convert("RGB")
             except Exception as exc:
                 error = exc
-                time.sleep(1 + attempt)
+                time.sleep(2 + attempt)
     raise RuntimeError(f"No se pudo descargar {title}: {error}")
 
 for filename, title in FILES.items():
