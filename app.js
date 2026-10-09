@@ -237,27 +237,52 @@ document.querySelectorAll('dialog').forEach(dialog => dialog.addEventListener('c
 
 const form = document.getElementById('contact-form');
 const statusElement = document.getElementById('form-status');
-const isNetlify = /(^|\.)netlify\.app$/.test(location.hostname) || window.ENABLE_NETLIFY_FORMS === true;
+const submitButton = form?.querySelector('button[type="submit"]');
+const submitLabel = document.getElementById('suggestion-submit-label');
+const setupNote = document.getElementById('suggestion-setup-note');
+const keyInput = document.getElementById('web3forms-access-key');
+
+function isWeb3FormsConfigured() {
+  const value = keyInput?.value.trim() || '';
+  return value.length >= 20 && value !== 'PENDIENTE_DE_ACCESS_KEY';
+}
+
+if (form && submitButton) {
+  const configured = isWeb3FormsConfigured();
+  submitButton.disabled = !configured;
+  if (submitLabel) submitLabel.textContent = configured ? 'Enviar sugerencia' : 'Buzón en preparación';
+  if (setupNote) {
+    setupNote.textContent = configured
+      ? 'Las sugerencias se envían mediante Web3Forms al buzón receptor. No solicitamos datos de identificación.'
+      : 'Próximamente: estamos habilitando la recepción mediante Web3Forms.';
+  }
+}
+
 if (form) form.addEventListener('submit', async (event) => {
   event.preventDefault();
-  if (!form.reportValidity()) return;
-  if (!isNetlify) {
-    statusElement.textContent = 'El formulario está listo visualmente, pero aún no está conectado a un servicio de recepción. Publícalo en Netlify y habilita las notificaciones del formulario.';
+  if (!isWeb3FormsConfigured() || !submitButton) {
+    statusElement.textContent = 'El buzón todavía no está habilitado. Inténtalo más adelante.';
     return;
   }
-  const btn = form.querySelector('button[type=submit]');
-  btn.disabled = true;
-  statusElement.textContent = 'Enviando...';
+  if (!form.reportValidity()) return;
+  submitButton.disabled = true;
+  if (submitLabel) submitLabel.textContent = 'Enviando sugerencia…';
+  statusElement.textContent = 'Enviando tu sugerencia…';
   try {
-    const formData = new FormData(form);
-    const response = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(formData).toString() });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    });
+    const data = await response.json();
+    if (!response.ok || data.success !== true) throw new Error('Solicitud rechazada');
     form.reset();
-    statusElement.textContent = 'Tu mensaje fue enviado correctamente. Gracias por escribirnos.';
+    statusElement.textContent = '¡Gracias! Tu sugerencia fue enviada correctamente.';
   } catch (_) {
-    statusElement.textContent = 'No se pudo enviar el mensaje. Inténtalo más tarde.';
+    statusElement.textContent = 'No se pudo enviar la sugerencia. Revisa tu conexión e inténtalo más tarde.';
   } finally {
-    btn.disabled = false;
+    submitButton.disabled = !isWeb3FormsConfigured();
+    if (submitLabel) submitLabel.textContent = 'Enviar sugerencia';
   }
 });
 
