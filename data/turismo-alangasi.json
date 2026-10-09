@@ -1,0 +1,98 @@
+{
+  "fuente": "GAD Parroquial Rural de Alangasí",
+  "pagina": "https://gadalangasi.gob.ec/atractivos/",
+  "uso": "Reutilización en el sitio autorizada por el usuario; material informativo del GAD, no imágenes de actos de campaña.",
+  "aviso": "Las descripciones son síntesis de la fuente y pueden cambiar; confirmar horarios y servicios antes de visitar.",
+  "atractivos": [
+    {
+      "id": "ilalo",
+      "name": "Mirador del Ilaló",
+      "category": "naturaleza",
+      "category_label": "Naturaleza",
+      "image": "turismo-ilalo.webp",
+      "original": "https://gadalangasi.gob.ec/wp-content/uploads/2020/06/ilalo-2.png",
+      "tagline": "Una vista abierta al Valle de Los Chillos",
+      "details": "La Cruz del Mirador del Tingo es presentada por el GAD como un punto desde el que se contemplan el valle y varias montañas y volcanes del entorno de Quito.",
+      "highlights": [
+        "Panorámicas del Valle de Los Chillos",
+        "La Cruz del Mirador",
+        "Entorno natural del volcán Ilaló"
+      ]
+    },
+    {
+      "id": "parque",
+      "name": "Parque Central de Alangasí",
+      "category": "cultura",
+      "category_label": "Cultura",
+      "image": "turismo-parque.webp",
+      "original": "https://gadalangasi.gob.ec/wp-content/uploads/2020/06/IMG_4329-scaled.jpg",
+      "tagline": "Esculturas que cuentan nuestras tradiciones",
+      "details": "El GAD señala que el parque fue declarado «Museo Iconográfico» en 2009. Sus esculturas de madera evocan personajes y costumbres como el Sacha Runa, el Diablo Huma y el Pingullero.",
+      "highlights": [
+        "Museo Iconográfico",
+        "Esculturas y personajes tradicionales",
+        "Identidad cultural parroquial"
+      ]
+    },
+    {
+      "id": "tingo",
+      "name": "Aguas termales de El Tingo",
+      "category": "experiencias",
+      "category_label": "Descanso",
+      "image": "turismo-tingo.webp",
+      "original": "https://gadalangasi.gob.ec/wp-content/uploads/2020/06/balneario.png",
+      "tagline": "Tradición termal y gastronomía local",
+      "details": "El GAD presenta al Balneario Municipal El Tingo como uno de los atractivos de la parroquia, con piscinas termales y un entorno vinculado a puestos de gastronomía tradicional.",
+      "highlights": [
+        "Piscinas termales",
+        "Espacios de esparcimiento",
+        "Comida típica en los alrededores"
+      ]
+    },
+    {
+      "id": "iglesia",
+      "name": "Iglesia Santo Tomás de Aquino",
+      "category": "cultura",
+      "category_label": "Patrimonio",
+      "image": "turismo-iglesia.webp",
+      "original": "https://gadalangasi.gob.ec/wp-content/uploads/2020/06/santo-tomas.png",
+      "tagline": "Un referente del patrimonio de Alangasí",
+      "details": "La iglesia forma parte de los atractivos patrimoniales que difunde el GAD. Su ficha recupera la historia eclesiástica de la parroquia, establecida en 1832.",
+      "highlights": [
+        "Arquitectura religiosa",
+        "Historia parroquial",
+        "Patrimonio local"
+      ]
+    },
+    {
+      "id": "centro",
+      "name": "Centro Cultural de Alangasí",
+      "category": "cultura",
+      "category_label": "Aprendizaje",
+      "image": "turismo-centro.webp",
+      "original": "https://gadalangasi.gob.ec/wp-content/uploads/2020/06/centro-culatural-alagansi.png",
+      "tagline": "Un lugar para aprender y compartir",
+      "details": "El GAD describe este espacio como un infocentro orientado a la formación en computación e internet para personas de diferentes edades. La oferta vigente debe confirmarse con la institución.",
+      "highlights": [
+        "Formación digital según el GAD",
+        "Espacio de acceso a conocimientos",
+        "Aprendizaje para distintas edades"
+      ]
+    },
+    {
+      "id": "schoenstatt",
+      "name": "Santuario Schoenstatt",
+      "category": "naturaleza",
+      "category_label": "Naturaleza y fe",
+      "image": "turismo-schoenstatt.webp",
+      "original": "https://gadalangasi.gob.ec/wp-content/uploads/2020/06/Santuario-Schoenstatt.png",
+      "tagline": "Senderos y tranquilidad entre áreas verdes",
+      "details": "Ubicado en un entorno elevado, el santuario aparece en la guía del GAD por sus miradores, áreas verdes, senderos cortos y una pequeña laguna.",
+      "highlights": [
+        "Espacios verdes y senderos",
+        "Miradores naturales",
+        "Paisaje y recogimiento"
+      ]
+    }
+  ]
+}
