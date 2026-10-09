@@ -414,3 +414,19 @@ a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button{c
   .sports-card-body{padding:15px 16px 18px}
   .sports-card-body h4{font-size:23px}
 }
+
+/* Corrección: foto original de Fernanda en Conoce a Fernanda */
+.brush-circle{background:#f8fbff}
+.brush-circle:before{background:linear-gradient(0deg,rgba(5,45,95,.24),transparent 42%);z-index:1;opacity:1}
+.brush-circle img{position:absolute;inset:0;left:0;bottom:auto;transform:none;display:block;width:100%;height:100%;max-width:100%;object-fit:contain;object-position:center;filter:none}
+.about-photo-caption{z-index:2}
+/* Miniaturas deportivas compactas: mostrar foto entera sin deformar */
+.sports-card-photo{position:relative;isolation:isolate;height:206px;min-height:0;aspect-ratio:auto;padding:8px;display:grid;place-items:center;background:#eaf4fc;overflow:hidden}
+.sports-card-photo--futbol{--sports-image:url('assets/futbol-femenino-alangasi.webp')}
+.sports-card-photo--basquet{--sports-image:url('assets/basquet-alangasi.webp')}
+.sports-card-photo:before{content:"";position:absolute;inset:-16px;z-index:-1;background:var(--sports-image) center /cover no-repeat;filter:blur(18px);opacity:.25;pointer-events:none}
+.sports-card-photo img{position:relative;z-index:1;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;object-position:center;border-radius:5px;box-shadow:0 2px 14px rgba(8,53,103,.13)}
+.sports-card-photo:focus-visible{outline:3px solid var(--orange);outline-offset:-4px}
+@media(max-width:830px){.sports-card-photo{height:180px;padding:8px}}
+@media(max-width:620px){.sports-card-photo{height:190px;padding:7px}.sports-card-body{padding:16px 18px 17px}.sports-card-body h4{font-size:23px}}
+@media(max-width:380px){.sports-card-photo{height:172px;padding:6px}}
