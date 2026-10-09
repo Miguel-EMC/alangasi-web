@@ -454,3 +454,84 @@ a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button{c
   .anonymous-suggestion-form textarea{min-height:140px}
   .suggestion-privacy-info{font-size:11px}
 }
+
+
+/* Guía turística de Alangasí · tarjetas responsive y fotografía en modal interno */
+.tourism{background:linear-gradient(180deg,#fff 0%,#f2f8ff 100%)}
+.tourism-intro{display:flex;gap:28px;align-items:flex-end;justify-content:space-between;margin-bottom:27px}
+.tourism-intro>div:first-child{max-width:800px}
+.tourism-intro .section-script{font-size:clamp(34px,4.2vw,56px);line-height:1.1;margin:12px 0 15px}
+.tourism-intro p{max-width:760px;color:#526b88;line-height:1.7;margin:0}
+.tourism-count{flex:none;display:flex;align-items:center;gap:10px;border:1px solid #d6e8f8;border-radius:18px;padding:12px 18px;background:#fff}
+.tourism-count strong{font:700 41px/1 "Kalam",cursive;color:var(--orange)}
+.tourism-count span{font-size:11px;color:#456280;font-weight:700;line-height:1.35}
+.tourism-filters{display:flex;gap:10px;flex-wrap:wrap;margin:27px 0 23px}
+.tourism-filter{border:1px solid #d3e5f7;background:#fff;color:#28547c;border-radius:999px;padding:10px 19px;font:700 12px "DM Sans",sans-serif;cursor:pointer;transition:background .2s,color .2s,border .2s}
+.tourism-filter:hover{border-color:#006cbd}
+.tourism-filter.is-active{background:#063f88;color:#fff;border-color:#063f88;box-shadow:0 5px 17px rgba(6,63,136,.15)}
+.tourism-filter:focus-visible,.tourism-photo-button:focus-visible,.tourism-card-link:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.tourism-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:21px}
+.tourism-card{min-width:0;overflow:hidden;border:1px solid #e0eaf5;border-radius:20px;background:#fff;box-shadow:0 11px 31px rgba(5,43,88,.07);display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.tourism-card:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(5,43,88,.13)}
+.tourism-card[hidden]{display:none!important}
+.tourism-photo-button{position:relative;width:100%;height:218px;border:0;background:#dbe9f4;padding:0;cursor:zoom-in;overflow:hidden;display:block}
+.tourism-photo-button img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .4s}
+.tourism-photo-button:hover img{transform:scale(1.045)}
+.tourism-card-number{position:absolute;top:15px;left:15px;border-radius:8px;background:rgba(3,34,77,.68);color:#fff;font-size:11px;padding:7px 10px;letter-spacing:.5px;font-weight:800}
+.tourism-photo-hint{display:inline-flex;align-items:center;gap:6px;position:absolute;bottom:12px;right:12px;background:rgba(255,255,255,.94);color:#063f88;border-radius:999px;padding:8px 12px;font-size:11px;font-weight:800}
+.tourism-photo-hint svg{width:15px;height:15px;stroke:currentColor}
+.tourism-card-content{padding:20px 21px 22px;display:flex;flex-direction:column;flex:1}
+.tourism-card-tag{font-size:10px;letter-spacing:1.3px;font-weight:800;color:#0073c8}
+.tourism-card h3{font-size:21px;line-height:1.25;color:#073b7e;margin:8px 0 10px;font-weight:800}
+.tourism-card p{font-size:13px;color:#566e88;line-height:1.6;margin:0 0 19px}
+.tourism-card-link{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin-top:auto;padding:0;border:0;background:transparent;color:#03478f;font-size:13px;font-weight:800;cursor:pointer}
+.tourism-card-link svg{width:17px;height:17px}
+.tourism-card-link:hover{text-decoration:underline;text-underline-offset:4px}
+.tourism-attribution{margin:25px 0 0;font-size:11px;line-height:1.65;color:#627997}
+.tourism-attribution a{text-decoration:underline;text-underline-offset:2px}
+.tourism-dialog{width:min(1060px,calc(100% - 34px));max-width:1060px;max-height:min(90dvh,880px);padding:0;border-radius:25px;overflow:auto}
+.tourism-dialog .dialog-close{position:absolute;z-index:4;right:17px;top:17px;background:#fff;box-shadow:0 5px 15px rgba(0,0,0,.13)}
+.tourism-dialog-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);min-height:445px}
+.tourism-dialog-photo{position:relative;background:#edf4f9;display:grid;place-items:center;min-height:380px;overflow:hidden}
+.tourism-dialog-photo img{display:block;width:100%;height:100%;max-height:75dvh;object-fit:contain;object-position:center}
+.tourism-dialog-photo-credit{position:absolute;bottom:15px;left:15px;background:rgba(255,255,255,.94);color:#31516e;border-radius:99px;font-size:10px;padding:7px 12px;box-shadow:0 4px 13px rgba(0,0,0,.12)}
+.tourism-dialog-details{padding:50px 36px 32px;display:flex;flex-direction:column;align-items:flex-start}
+.tourism-dialog-category{display:inline-flex;margin:17px 0 1px;border-radius:20px;background:#e7f3ff;color:#0563ac;padding:7px 12px;font-size:11px;letter-spacing:.8px;font-weight:800;text-transform:uppercase}
+.tourism-dialog-details h2{font-size:clamp(29px,3vw,44px);line-height:1.14;margin:12px 0 14px}
+.tourism-dialog-details>p{font-size:14px;color:#46627e;line-height:1.65;margin:0 0 12px}
+.tourism-dialog-details h3{margin:18px 0 8px;font-size:16px;color:#083a76}
+.tourism-dialog-details ul{margin:0 0 19px;padding-left:19px;font-size:13px;color:#4a6180;line-height:1.8}
+.tourism-dialog-details .tourism-dialog-caution{border-left:3px solid var(--orange);padding-left:12px;font-size:11px}
+.tourism-dialog-close{margin-top:auto}
+@media(max-width:1020px){
+  .tourism-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+  .tourism-photo-button{height:230px}
+}
+@media(max-width:720px){
+  .tourism-intro{align-items:flex-start}
+  .tourism-count{padding:8px 12px}
+  .tourism-count strong{font-size:32px}
+  .tourism-dialog-layout{grid-template-columns:1fr}
+  .tourism-dialog-photo{min-height:0;height:min(42dvh,360px)}
+  .tourism-dialog-photo img{max-height:none}
+  .tourism-dialog-details{padding:25px 22px 26px}
+  .tourism-dialog-details h2{font-size:31px}
+  .tourism-dialog-close{min-height:42px}
+}
+@media(max-width:600px){
+  .tourism-intro{display:block}
+  .tourism-intro p{font-size:14px}
+  .tourism-count{display:none}
+  .tourism-filters{flex-wrap:nowrap;overflow-x:auto;padding:3px 2px 10px;margin:20px -2px 13px;scrollbar-width:thin}
+  .tourism-filter{flex:none;padding:9px 13px}
+  .tourism-grid{grid-template-columns:minmax(0,1fr);gap:17px}
+  .tourism-photo-button{height:215px}
+  .tourism-card-content{padding:18px 19px 21px}
+  .tourism-card h3{font-size:20px}
+  .tourism-card p{font-size:13px}
+  .tourism-dialog{width:calc(100% - 18px);max-height:92dvh;border-radius:18px}
+  .tourism-dialog-photo{height:min(36dvh,290px)}
+  .tourism-dialog-photo-credit{font-size:9px;padding:5px 9px;bottom:9px;left:9px}
+  .tourism-dialog-details h2{font-size:28px}
+  .tourism-dialog-details>p{font-size:13px}
+}
